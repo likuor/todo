@@ -30,7 +30,7 @@ export const TodoList = ({ taskList, setTaskList }) => {
 
   return (
     <div>
-      <Box sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper' }}>
+      <Box sx={{ width: '100%', maxWidth: 750, bgcolor: 'background.paper' }}>
         <nav aria-label='secondary mailbox folders'>
           <List>
             {taskList.map((task, value) => {
@@ -57,6 +57,7 @@ export const TodoList = ({ taskList, setTaskList }) => {
                     </ListItemIcon>
                     <ListItemText primary={task.text} />
                     <Button
+                      sx={{ width: '20ch' }}
                       variant='outlined'
                       color='error'
                       onClick={() => handleDelete(task.id)}

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 export const InputForm = ({ taskList, setTaskList }) => {
@@ -25,12 +27,25 @@ export const InputForm = ({ taskList, setTaskList }) => {
 
   return (
     <div>
-      <form action='' onSubmit={handleSubmit}>
-        <input type='text' onChange={handleChange} value={inputText} />
-        <Button variant='contained' type='submit'>
+      <Box
+        component='form'
+        sx={{ display: 'flex', flexWrap: 'wrap' }}
+        noValidate
+        autoComplete='off'
+        onSubmit={handleSubmit}
+      >
+        <TextField
+          sx={{ m: 1, width: '50ch' }}
+          id='standard-basic'
+          label='Type your ToDo'
+          variant='standard'
+          onChange={handleChange}
+          value={inputText}
+        />
+        <Button variant='contained' type='submit' sx={{ m: 1, width: '25ch' }}>
           add
         </Button>
-      </form>
+      </Box>
     </div>
   );
 };
